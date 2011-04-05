@@ -1,0 +1,35 @@
+!!!
+/[if lt IE 7 ] <html lang="en" class="no-js ie6">
+/[if IE 7 ] <html lang="en" class="no-js ie7">
+/[if IE 8 ] <html lang="en" class="no-js ie8">
+/[if IE 9 ] <html lang="en" class="no-js ie9">
+/ [if (gt IE 9)|!(IE)]><!
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %title JSWarrior
+    %meta{:content => "HTML5 Game", :name => "description"}/
+    %meta{:content => "TJ Peden", :name => "author"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "libs/modernizr-1.7.min"
+  %body
+    #page
+      %header
+        %h1 TJCoding.com
+        %h2 Presents
+      #main{:role => "main"}
+        #canvas
+          %canvas{:width => "320", :height => "240"}
+        #controls
+          %button#save Save
+          %button#load Load
+          %button#run Run
+        #editor
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"}
+    :javascript
+      !window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.1.min.js"%3E%3C/script%3E'))
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"}
+    = javascript_include_tag "ace/ace", "ace/theme-twilight", "ace/mode-javascript", "plugins", "jquery.lang", "application"
